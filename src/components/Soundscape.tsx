@@ -21,7 +21,14 @@ export const Soundscape: React.FC = () => {
     // Listen for events
     const handleJukeboxPlay = () => setIsInterrupted(true);
     const handleJukeboxPause = () => setIsInterrupted(false);
-    const handleEnter = () => setIsMuted(false);
+    const handleEnter = () => {
+      setIsMuted(false);
+      // Ensure immediate, synchronous playback using the click event's trusted context
+      if (howlRef.current && !howlRef.current.playing()) {
+        howlRef.current.volume(0.2); // Default volume
+        howlRef.current.play();
+      }
+    };
 
     window.addEventListener('jukebox-play', handleJukeboxPlay);
     window.addEventListener('jukebox-stop', handleJukeboxPause);
@@ -47,9 +54,8 @@ export const Soundscape: React.FC = () => {
 
     if (shouldBePlaying) {
       if (!howl.playing()) {
-        howl.volume(0);
+        howl.volume(volume);
         howl.play();
-        howl.fade(0, volume, 500);
       } else {
         howl.fade(howl.volume(), volume, 500);
       }
