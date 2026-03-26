@@ -28,9 +28,9 @@ export const Footer: React.FC = () => {
           Made with <span className="text-rani-pink inline-block animate-pulse mx-1">❤️</span> by <span className="text-saffron-gold font-bold">Shreya</span>
         </motion.p>
 
-        <p className="font-body text-ivory-text/40 text-xs uppercase tracking-[0.3em] mt-2">
+        {/* <p className="font-body text-ivory-text/40 text-xs uppercase tracking-[0.3em] mt-2">
           Shaahi Jashan 2026
-        </p>
+        </p> */}
       </div>
 
       {/* Subtle bottom glow */}

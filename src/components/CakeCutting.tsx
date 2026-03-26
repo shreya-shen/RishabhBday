@@ -78,7 +78,7 @@ export const CakeCutting: React.FC = () => {
       let drawW = drawH * imgRatio;
 
       const drawX = canvas.width / 2 - drawW / 2;
-      const drawY = canvas.height / 2 - drawH / 2;
+      const drawY = canvas.height / 2 - drawH / 2 + (canvas.height * 0.1); // Shifted down 10% of window height
 
       if (!state.cutLine) {
         ctx.drawImage(cakeImg, drawX, drawY, drawW, drawH);

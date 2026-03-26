@@ -65,30 +65,27 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ isEntered, setIsEntere
                 transition={{ duration: 0.8 }}
               >
                 <div 
-                  className="relative" 
+                  className="relative w-[90vw] max-w-[500px] h-[450px]" 
                   style={{ 
                     perspective: '1200px',
-                    width: '90vw',
-                    maxWidth: '500px',
-                    height: '380px'
                   }}
                 >
                   
                   {/* The Invitation Card (Slides UP out of the envelope) */}
                   <motion.div
-                    className="absolute bg-parchment-cream p-8 text-center shadow-xl clip-jharokha"
+                    className="absolute bg-parchment-cream p-4 sm:p-6 text-center shadow-xl clip-jharokha flex flex-col justify-center"
                     style={{
-                      left: '32px',
-                      top: '16px',
+                      left: '24px',
+                      top: '20px',
                       border: '2px solid rgba(212,160,23,1)',
                       background: 'linear-gradient(rgba(255,252,240,1), rgba(255,252,240,1)), url("https://www.transparenttextures.com/patterns/cream-paper.png")',
-                      width: 'calc(100% - 64px)', // Adjusting for inset-x-8
-                      height: '350px',
+                      width: 'calc(100% - 48px)',
+                      minHeight: '400px',
                       zIndex: isOpen ? 60 : 10
                     }}
                     initial={{ opacity: 0, scale: 0.8, y: 0, rotate: 0 }}
                     animate={{ 
-                      y: isOpen ? [0, -360, 0] : 0,
+                      y: isOpen ? [0, -420, 0] : 0,
                       scale: isOpen ? [0.8, 1.05, 1.02] : 0.8,
                       opacity: isOpen ? [0, 0.9, 1] : 0,
                       rotate: isOpen ? [0, -2, 0] : 0,
@@ -101,24 +98,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ isEntered, setIsEntere
                       delay: 0.7 
                     }}
                   >
-                    <div className="relative z-70 flex flex-col items-center">
-                      <div className="mb-4">
-                        <svg viewBox="0 0 100 40" width="80" height="32">
+                    <div className="relative z-[70] flex flex-col items-center mt-2">
+                      <div className="mb-2">
+                        <svg viewBox="0 0 100 40" width="60" height="24">
                           <path d="M5,40 L5,25 Q5,5 50,5 Q95,5 95,25 L95,40" fill="none" stroke="#D4A017" strokeWidth="1.5" />
                           <circle cx="50" cy="8" r="3" fill="#D4A017" />
                         </svg>
                       </div>
 
-                      <p className="uppercase font-bold text-[#004D40] text-[15px] tracking-[0.2em]">Khamma Ghani!</p>
+                      <p className="uppercase font-bold text-[#004D40] text-[13px] md:text-[15px] tracking-[0.2em]">Khamma Ghani!</p>
                       
-                      <h1 className="mt-2 text-[#1A0A0E] font-display text-4xl font-bold leading-tight">
+                      <h1 className="mt-1 text-[#1A0A0E] font-display text-3xl md:text-4xl font-bold leading-tight">
                         {FRIEND_NAME}
                       </h1>
                       
-                      <p className="mt-1 italic text-[#4A142C] text-md">They say the stars over Mehrangarh shine brighter on one night of the year. Tonight is that night. आओ, पधारो म्हारे देस!</p>
+                      <p className="mt-2 italic text-[#4A142C] text-sm md:text-base px-1 sm:px-4">They say the stars over Mehrangarh shine brighter on one night of the year. Tonight is that night. आओ, पधारो म्हारे देस!</p>
                       
-                      <p className="mt-4 font-bold text-deep-burgundy tracking-widest uppercase text-base">Shaahi Jashan</p>
-                      <p className="text-[#8B6914] text-[11px] font-bold mt-1 tracking-widest">{BIRTHDAY_DATE}</p>
+                      <p className="mt-4 font-bold text-deep-burgundy tracking-widest uppercase text-sm md:text-base">Shaahi Jashan</p>
+                      <p className="text-[#8B6914] text-[10px] md:text-[11px] font-bold mt-1 tracking-widest">{BIRTHDAY_DATE}</p>
 
                       <motion.button
                         onClick={() => {
@@ -127,7 +124,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ isEntered, setIsEntere
                         }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="mt-6 px-8 py-3 bg-saffron-gold text-midnight-maroon font-bold rounded-sm uppercase text-[11px] tracking-widest shadow-lg cursor-pointer"
+                        className="mt-5 mb-2 px-6 py-3 md:px-8 md:py-3 bg-saffron-gold text-midnight-maroon font-bold rounded-sm uppercase text-[10px] md:text-[11px] tracking-widest shadow-lg cursor-pointer"
                       >
                         Enter The Palace
                       </motion.button>

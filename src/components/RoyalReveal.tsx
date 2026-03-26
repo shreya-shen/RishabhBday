@@ -151,9 +151,9 @@ export const RoyalReveal: React.FC = () => {
   }, [scrollYProgress]);
 
   return (
-    <section ref={containerRef} className="relative w-full h-[140vh] bg-midnight-maroon">
+    <section ref={containerRef} className="relative w-full min-h-[140vh] bg-midnight-maroon">
       {/* Bottom Transition Mask (Melts into Diya Section) */}
-      <div className="absolute bottom-0 left-0 w-full h-[60vh] bg-gradient-to-t from-midnight-maroon to-transparent z-[30] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-[40vh] bg-gradient-to-t from-midnight-maroon to-transparent z-[30] pointer-events-none" />
 
       {/* SVG Filter for Jagged Edges */}
       <svg className="hidden">
@@ -249,7 +249,7 @@ export const RoyalReveal: React.FC = () => {
                   className="relative z-20 w-full h-full origin-top flex flex-col justify-between"
                 >
                   <motion.div
-                    className="p-6 md:p-10 text-center flex-grow flex flex-col justify-center border-x-4 border-y border-dashed border-[#8B6508]/30 mx-3 sm:mx-6 my-3 sm:my-4"
+                    className="p-6 md:p-10 text-center flex-grow flex flex-col justify-center border-x-4 border-y border-dashed border-[#8B6508]/30 mx-3 sm:mx-6 my-3 sm:my-4 pb-16"
                     style={{ y: innerContentY, opacity: innerContentOpacity }}
                   >
                     <p className="font-display text-xl md:text-3xl text-[#3B1018] mb-4 sm:mb-6 leading-relaxed font-bold relative z-10">
