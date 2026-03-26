@@ -88,7 +88,7 @@ export const MusicJukebox: React.FC = () => {
   const toggleMute = () => setIsMuted(!isMuted);
 
   return (
-    <section className="relative w-full min-h-screen bg-sand-beige py-24 flex flex-col items-center justify-center overflow-hidden">
+    <section id="music-jukebox" className="relative w-full min-h-screen bg-sand-beige py-24 flex flex-col items-center justify-center overflow-hidden">
       {/* Royal Wallpaper Background */}
       <div 
         className="absolute inset-0 opacity-25 pointer-events-none"

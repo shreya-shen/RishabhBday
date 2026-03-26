@@ -42,18 +42,22 @@ export const Soundscape: React.FC = () => {
     const howl = howlRef.current;
     const shouldBePlaying = !isMuted && !isInterrupted;
 
+    // Clear any previously registered fade events to prevent pause race conditions
+    howl.off('fade');
+
     if (shouldBePlaying) {
       if (!howl.playing()) {
+        howl.volume(0);
         howl.play();
-        howl.fade(0, volume, 2000);
+        howl.fade(0, volume, 500);
       } else {
-        howl.fade(howl.volume(), volume, 1000);
+        howl.fade(howl.volume(), volume, 500);
       }
     } else {
       if (howl.playing()) {
-        howl.fade(howl.volume(), 0, 1000);
+        howl.fade(howl.volume(), 0, 500);
         howl.once('fade', () => {
-          if (!shouldBePlaying) howl.pause();
+          howl.pause();
         });
       }
     }
@@ -75,9 +79,15 @@ export const Soundscape: React.FC = () => {
         </div>
       )}
 
-      <div className="w-10 h-10 rounded-full border-2 border-saffron-gold/50 flex items-center justify-center text-saffron-gold bg-black/20">
+      <button
+        onClick={() => {
+          document.getElementById('music-jukebox')?.scrollIntoView({ behavior: 'smooth' });
+        }}
+        title="Go to Music Jukebox"
+        className="w-10 h-10 rounded-full border-2 border-saffron-gold/50 flex items-center justify-center text-saffron-gold bg-black/20 hover:bg-saffron-gold/20 hover:scale-110 transition-all cursor-pointer"
+      >
         <Music size={16} className={(!isMuted && !isInterrupted) ? 'animate-spin-slow' : ''} />
-      </div>
+      </button>
     </div>
   );
 };
