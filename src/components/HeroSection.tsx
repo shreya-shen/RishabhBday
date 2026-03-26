@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { AnimatePresence, motion, useScroll, useTransform, useSpring } from 'motion/react';
 import { BackgroundStars } from './BackgroundStars';
 
-const FRIEND_NAME = "Rishabh";
+const FRIEND_NAME = "Rishabh & Samruddhi";
 const BIRTHDAY_DATE = 'March 27, 2026';
 
 interface HeroSectionProps {
@@ -169,15 +169,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ isEntered, setIsEntere
                         >
                           {/* Wax Seal */}
                           <motion.div 
-                            className="w-16 h-16 bg-[#6B1220] rounded-full flex items-center justify-center shadow-2xl border-2 border-saffron-gold/30"
+                            className=" mt-8 w-20 h-20 bg-[#6B1220] rounded-full flex items-center justify-center shadow-2xl border-2 border-saffron-gold/30"
                             whileHover={{ scale: 1.1 }}
                           >
-                            <span className="font-display text-2xl text-saffron-gold font-bold">R</span>
+                            <span className="font-display text-2xl text-saffron-gold font-bold">SS</span>
                           </motion.div>
                           <motion.p 
-                            className="mt-4 font-heading text-saffron-gold text-xs uppercase tracking-[0.3em] font-bold drop-shadow-lg"
-                            animate={{ opacity: [0.4, 1, 0.4] }}
-                            transition={{ repeat: Infinity, duration: 2 }}
+                            className="mt-2 font-heading text-antique-gold text-lg uppercase tracking-[0.3em] font-extrabold drop-shadow-lg"
+                            // animate={{ opacity: [0.4, 1, 0.4] }}
+                            // transition={{ repeat: Infinity, duration: 2 }}
                           >
                             Click to Open
                           </motion.p>
