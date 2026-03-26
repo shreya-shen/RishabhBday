@@ -115,7 +115,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ isEntered, setIsEntere
                         {FRIEND_NAME}
                       </h1>
                       
-                      <p className="mt-1 italic text-[#4A142C] text-md">You are cordially invited to celebrate the Royal Birthday of our esteemed friend.</p>
+                      <p className="mt-1 italic text-[#4A142C] text-md">They say the stars over Mehrangarh shine brighter on one night of the year. Tonight is that night.</p>
                       
                       <p className="mt-4 font-bold text-deep-burgundy tracking-widest uppercase text-base">Shaahi Jashan</p>
                       <p className="text-[#8B6914] text-[11px] font-bold mt-1 tracking-widest">{BIRTHDAY_DATE}</p>
